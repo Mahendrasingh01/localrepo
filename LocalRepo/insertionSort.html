@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int inserstion_Sort(int a[] , int size){
+    
+    
+    
+    for(int i=0; i<size; i++){
+      int temp = a[i];
+      int j = i-1;
+        
+         for( ; j>=0; j--){
+             
+             if(a[j]>temp)//shift
+                 a[j+1] = a[j];
+             else
+                  break;
+              
+         }
+          a[j+1] = temp;
+    }
+}
+
+void print_Array(int a[] , int size){
+    
+    for(int i=0; i<size; i++){
+        cout<<a[i]<<" ";
+    }
+}
+
+void insert_Array(int a[], int size){
+    
+        for(int i=0; i<size; i++){
+        cin>>a[i];
+    }
+}
+
+int main()
+{
+    int n;
+    cout<<"size: ";
+    cin>>n;
+    int a[n];
+    
+    insert_Array(a,n);
+    inserstion_Sort(a,n);
+    print_Array(a,n);
+    
+    
+}
